@@ -1,0 +1,220 @@
+    .card {
+        text-align: center;
+        padding-left: 4%;
+        padding-right: 4%;
+        border: 5px solid white;
+        border-radius: 20px;
+        background-color: rgb(133, 0, 221);
+        height: 250;
+        min-width: 15%;
+        min-height: 547px;
+        height: auto
+    }
+    
+    body {
+        background-color: rgb(231, 21, 98);
+    }
+    
+    #content {
+        display: flex;
+        justify-content: space-around;
+        margin: 10px;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    @media(max-width:800px) {
+        #content {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card {
+            margin-top: 20px;
+            width: 55%;
+            height: fit-content;
+        }
+        .slideshow {
+            height: 100%;
+            width: 100%;
+        }
+        #suform {
+            margin-top: 14%;
+            margin-bottom: 14%
+        }
+    }
+    
+    #text {
+        text-align: center;
+        text-decoration: solid;
+        background-color: white;
+        padding: 1%;
+        font-size: 3vw;
+        color: rgb(231, 21, 98);
+        margin-bottom: 50px;
+        border-top: 5px solid rgb(139, 24, 216);
+        border-bottom: 5px solid rgb(139, 24, 216);
+    }
+    
+    header>h1 {
+        text-align: center;
+        font-family: 'arial';
+        font: 50px solid;
+        background-color: rgb(139, 24, 216);
+        border-radius: 20px;
+        margin-top: 30px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        color: white;
+    }
+    
+    #lable1,
+    #lable2,
+    #lable11,
+    #lable21,
+    #lable31,
+    #lable41 {
+        margin-left: 10%;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .xyz {
+        text-align: left;
+    }
+    
+    #emailbox,
+    #passwordbox {
+        margin-top: 5px;
+        border-radius: 7px;
+        border-color: rgba(250, 235, 215, 0);
+        height: 30px;
+        width: 80%;
+    }
+    
+    #siform>h1 {
+        margin-top: 34%;
+        margin-bottom: 35%;
+        font-size: 35;
+        color: white;
+    }
+    
+    #suform>h1 {
+        margin-top: 34px;
+        margin-bottom: 10%;
+        font-size: 35;
+        color: white;
+    }
+    
+    #signinbtn,
+    #signupbtn1 {
+        background-color: rgb(231, 21, 98);
+        color: white;
+        font-size: 16;
+        font-weight: bolder;
+        padding-right: 8%;
+        padding-left: 8%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        border: 0px;
+        border-radius: 7px;
+        margin-top: 5%;
+    }
+    
+    #signupbtn,
+    #signinbtn1 {
+        background-color: rgba(240, 248, 255, 0);
+        border: 1px solid white;
+        color: white;
+        font-weight: bolder;
+        padding-right: 6%;
+        padding-left: 6%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        font-size: 16;
+        font-weight: bolder;
+        border-radius: 7px;
+    }
+    
+    #signupbtn:hover,
+    #signinbtn1:hover {
+        color: aqua;
+    }
+    
+    #signupbtn1:hover,
+    #signinbtn:hover {
+        background-color: white;
+        color: crimson
+    }
+    
+    #emailbox1,
+    #passwordbox1,
+    #namebox1,
+    #passwordbox21 {
+        border-radius: 7px;
+        border-color: rgba(250, 235, 215, 0);
+        height: 30;
+        width: 80%
+    }
+    
+    #emailbox1::placeholder,
+    #passwordbox1::placeholder,
+    #passwordbox21::placeholder,
+    #namebox1::placeholder,
+    #emailbox::placeholder,
+    #passwordbox::placeholder {
+        color: rgba(220, 10, 73, 0.7)
+    }
+    
+    form>p {
+        color: white;
+        text-align: center;
+        margin-top: 16px;
+        font-size: 15px;
+    }
+    
+    .res {
+        font-size: 15;
+        font-weight: bold;
+    }
+    
+    .slideshow {
+        padding: 2%;
+        position: relative;
+        overflow: none;
+        border-radius: 20px;
+        width: 55%;
+        height: 100%;
+        border: 5px solid white;
+        background-color: rgb(139, 24, 216);
+    }
+    
+    .slideshow [class*='slide-'] {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    
+    footer {
+        display: flex;
+        align-items: flex-end;
+        background-position: bottom;
+        font-size: 20px;
+        background-color: white;
+        color: rgb(139, 24, 216);
+        padding: 1%;
+        margin-bottom: 20px;
+        border-top: 3px solid rgb(139, 24, 216);
+        border-bottom: 3px solid rgb(139, 24, 216);
+    }
+    
+    #art {
+        text-align: center;
+        font-size: 25px;
+        color: aliceblue;
+    }
+    
+    span {
+        color: white;
+        font-size: 15;
+    }

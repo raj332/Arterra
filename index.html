@@ -1,0 +1,247 @@
+<html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="cssfile2.css">
+
+    <title>
+        ARTERRA
+    </title>
+</head>
+
+<body>
+    <header>
+
+        <h1><b>ARTERRA</b></h1>
+        <div id="text">
+            Discover you passion with us, Let us be your canvas.
+
+        </div>
+    </header>
+    <div id="art">
+        <p>Find people who have magic called Art , Communicate with them ,Buy masterpieces or Sell your Masterpieces ,Share your ideas and get people feedback from around the world.</p>
+    </div>
+    <div id="content">
+        <div class="slideshow">
+            <div class="slide-demo">
+
+                <img src="1.jpg" />
+
+            </div>
+            <div class="slide-demo">
+
+                <img src="2.jpg" />
+
+            </div>
+            <div class="slide-demo">
+
+                <img src="3.jpg" />
+
+            </div>
+            <div class="slide-demo">
+
+                <img src="4.jpg" />
+
+            </div>
+            <div class="slide-demo">
+
+                <img src="14.jpg" />
+
+            </div>
+            <div class="slide-demo">
+
+                <img src="15.jpg" />
+
+            </div>
+
+        </div>
+        <div class="card">
+
+            <form id="suform">
+                <h1>Sign up</h1>
+
+                <div class="xyz"> <label for="namebox1" id="lable11">Name</label></div>
+                <input type="text" id="namebox1" placeholder="Ex. Raj Patel" required><br><span id="nameerror"></span><br>
+                <div class="xyz">
+                    <lable for="emailbox1" id="lable21">Email</lable>
+                </div>
+                <input type="email" id="emailbox1" placeholder="Ex. xyz12@gmail.com" required><br><span id="emailerror"></span><br>
+                <div class="xyz">
+                    <lable for="passwordbox1" id="lable31">Password</lable>
+                </div>
+                <input type="password" id="passwordbox1" placeholder="Ex. abcd%123" title="Password must include 6 char, onr special ,one digit and a capital letter" required><br><span id="pass1error"></span><br>
+                <div class="xyz">
+                    <lable for="passwordbox21" id="lable41">Confirm</lable>
+                </div>
+                <input type="password" id="passwordbox21" placeholder="Ex. abcd%123" required><br><span id="pass2error"></span><br>
+                <input type="button" id="signupbtn1" value="Create">
+                <p>If you have an account then </p>
+
+                <input type="button" id="signinbtn1" value="Sign in"><br>
+                <p class="res">.</p>
+            </form>
+            <form id="siform">
+                <h1> Sign In</h1>
+                <div class="xyz">
+                    <lable for="emailbox" id="lable1">Email</lable>
+                </div>
+                <input type="email" id="emailbox" placeholder="Ex. xyz123@gmail.com"><br><br>
+                <div class="xyz">
+                    <lable for="passwordbox" id="lable2">Password</lable>
+                </div>
+                <input type="password" id="passwordbox" placeholder="your password"><br><br>
+                <input type="button" id="signinbtn" value="Login"><br>
+                <p>Still not registered! then </p>
+                <input type="button" id="signupbtn" value="Sign up"><br>
+                <p class="res">.</p>
+
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <marquee> Art is a line around your thoughts &nbsp&nbsp Great art picks up where nature ends. &nbsp&nbsp You don’t take a photograph, you make it. &nbsp&nbsp Creativity takes courage.</marquee>
+    </footer>
+</body>
+
+
+
+<script src="jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="loopit.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+    $(function() {
+        $("#suform").css('display', 'none')
+        $("#signinbtn").click(function() {
+
+            str = localStorage.getItem('user1')
+            userdetail = JSON.parse(str)
+
+            if ($("#emailbox").val() == userdetail.email && $("#passwordbox").val() == userdetail.password) {
+
+                window.open("home1.html", "_self");
+
+            } else {
+                $(".res").html("Invailid email or password !");
+            }
+        })
+        $(document).ready(function() {
+            $(".slide-demo").loopItNow({
+                vertical: true, // vertical or horizontal
+                speed: 2000, // animation speed
+                effect: 'easeInExpo', // easing options
+                captionTop: true,
+                captionBottom: true,
+                textbar: false
+            });
+        });
+
+        $("#signupbtn").click(function() {
+            $("#siform").css('display', 'none');
+            $("#suform").css('display', 'flexbox');
+
+        })
+        $("#signinbtn1").click(function() {
+            $("#suform").css('display', 'none');
+            $("#siform").css('display', 'flexbox');
+
+        })
+    })
+
+
+    var flag = 1;
+    var flag2 = 1;
+    $("#namebox1").blur(function() {
+
+        if (!(/^([a-zA-Z\s]{3,})$/.test($("#namebox1").val()))) {
+
+            $("#nameerror").html("  Please Enter valid name.");
+            flag = 0;
+
+        } else {
+            flag = 1;
+            $("#nameerror").html("");
+
+        }
+    })
+    $("#passwordbox1").blur(function() {
+
+        if (!(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/).test($("#passwordbox1").val())) {
+            $("#pass1error").html(`<marquee width="180px">Min 8 char,capital letter,special symbol,number</marquee>`);
+            flag = 0;
+        } else {
+            flag = 1;
+            $("#pass1error").html("");
+            $("#passwordbox21").removeAttr('disabled');
+
+        }
+    });
+
+    $("#passwordbox21").blur(function() {
+        if ($("#passwordbox1").val() !== $("#passwordbox21").val()) {
+            $("#pass2error").html("Re-Entered Password is Wrong.");
+            flag = 0;
+        } else {
+            flag = 1;
+            $("#pass2error").html("");
+        }
+    })
+    $("#emailbox1").blur(function() {
+        if (!(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/).test($("#emailbox1").val())) {
+            $("#emailerror").html("Please, Enter valid email!");
+            flag = 0;
+        } else {
+            flag = 1;
+            $("#emailerror").html("");
+
+        }
+    })
+
+    function check() {
+        flag2 = 1;
+        if (uname == "") {
+            $("#nameerror").html("Please, Enter your name!");
+            flag2 = 0;
+        }
+        if (uemail == "") {
+            $("#emailerror").html("Email address is required!");
+            flag2 = 0;
+        }
+        if (upassword == "") {
+            $("#pass1error").html("Password is required!");
+            flag2 = 0;
+        }
+        if ($("#passwordbox2").val() == "") {
+            $("#pass2error").html("Re-Enter password again!");
+            flag2 = 0;
+        }
+    }
+    $("#signupbtn1").click(function() {
+
+        uname = document.getElementById("namebox1").value;
+        uemail = document.getElementById("emailbox1").value;
+        upassword = document.getElementById("passwordbox1").value;
+        check();
+        alert("flag 1" + flag + "flag2" + flag2)
+        if (flag == 1 && flag2 == 1) {
+            user = {
+                name: uname,
+                email: uemail,
+                password: upassword
+            }
+
+            str = JSON.stringify(user);
+            localStorage.setItem('user1', str)
+            $(".res").html("Account created successfuly")
+        } else {
+            $(".res").html("Please,Enter all deatils properly !!")
+        }
+    })
+</script>
+
+</html>
