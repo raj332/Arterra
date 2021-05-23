@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+    <title>Arterra Home</title>
+    <link rel="stylesheet" href="cssfile.css">
+    <script src="jquery.js"></script>
+
+    <script>
+        var image = [];
+        var i = 0;
+        image[0] = "1.jpg";
+        image[1] = "2.jpg";
+        image[2] = "3.jpg";
+        image[3] = "4.jpg";
+        image[4] = "5.jpg";
+        image[5] = "6.jpg";
+
+        function changeimg() {
+            $("#slideshow").html("<img src=" + image[i] + ">");
+            if (i < image.length - 1) {
+                i++;
+
+            } else {
+                i = 0;
+
+            }
+            setTimeout("changeimg()", 3000);
+        }
+    </script>
+</head>
+
+<body onload="changeimg()">
+
+
+    <div id="btn">
+        <a href="index.html" target="_self"> <input type="button" value="Logout" id="logoutbtn"></a>
+    </div>
+
+    <header>
+        <div id="title">ARTERRA</div>
+
+    </header>
+    <br><br>
+    <div id="content">
+        <div id="slideshow">
+
+        </div>
+    </div>
+
+
+
+</body>
+
+
+</html>
